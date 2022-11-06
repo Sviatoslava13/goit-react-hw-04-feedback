@@ -9,7 +9,7 @@ export function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const options = [good, neutral, bad];
+  //const options = [good, neutral, bad];
 
   const onLeaveFeedback = options => {
     switch (options) {
@@ -28,9 +28,11 @@ export function App() {
     }
   };
 
-  const countTotalFeedback = () => {
+  /*const countTotalFeedback = () => {
     return options.reduce((acc, item) => acc + item);
-  };
+  };*/
+
+  const countTotalFeedback = () => { return good + neutral + bad }
 
   const countPositiveFeedbackPercentage = () => {
     return (good / (countTotalFeedback() || 1)) * 100;
